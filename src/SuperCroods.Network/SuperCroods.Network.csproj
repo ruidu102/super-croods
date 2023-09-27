@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9BA7264-9BDF-4D7E-8DE6-C7B001E29CF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperCroods.Network</RootNamespace>
+    <AssemblyName>SuperCroods.Network</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.2\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICommand.cs" />
+    <Compile Include="IConnection.cs" />
+    <Compile Include="Mail\ISmtpCommand.cs" />
+    <Compile Include="Mail\MailAttach.cs" />
+    <Compile Include="Mail\MailInfo.cs" />
+    <Compile Include="Mail\NullMailAttach.cs" />
+    <Compile Include="Mail\MailClient.cs" />
+    <Compile Include="Mail\SmtpInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecureFTP\ISecureFTPCommand.cs" />
+    <Compile Include="SecureFTP\ISecureFTPConnection.cs" />
+    <Compile Include="SecureFTP\RenciSecureFTPCommand.cs" />
+    <Compile Include="SecureFTP\RenciSecureFTPConnection.cs" />
+    <Compile Include="SecureFTP\SecureFTPCredential.cs" />
+    <Compile Include="SecureFTP\SecureFTPInfo.cs" />
+    <Compile Include="SecureShell\ISecureShellCommand.cs" />
+    <Compile Include="SecureShell\ISecureShellConnection.cs" />
+    <Compile Include="SecureShell\RenciSecureShellCommand.cs" />
+    <Compile Include="SecureShell\RenciSecureShellConnection.cs" />
+    <Compile Include="SecureShell\SecureShellCredential.cs" />
+    <Compile Include="SecureShell\SecureShellInfo.cs" />
+    <Compile Include="SharedFolder\ISharedFolderCommand.cs" />
+    <Compile Include="SharedFolder\ISharedFolderConnection.cs" />
+    <Compile Include="SharedFolder\NetworkResource.cs" />
+    <Compile Include="SharedFolder\SharedFolderConnection.cs" />
+    <Compile Include="SharedFolder\SharedFolderCredential.cs" />
+    <Compile Include="SharedFolder\SharedFolderInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FTP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

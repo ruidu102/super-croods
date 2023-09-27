@@ -1,2 +1,3 @@
-# super-croods
-A simple library project to provide basic functionality to facilitate program development
+# Super-Croods
+<img align="right" src="docs/images/sc.png">
+Super-Croods provides basic functionality to assistance program development via .NET framework.
