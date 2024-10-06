@@ -3,7 +3,9 @@ Thumbs.db
 
 #Ignore files built by Visual Studio
 .vs/
+packages/
 obj/
+TestResults/
 [Bb]in/
 [Dd]ebug*/
 [Rr]elease*/

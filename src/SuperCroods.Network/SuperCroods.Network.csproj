@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SuperCroods.Network</RootNamespace>
     <AssemblyName>SuperCroods.Network</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>supercroods.network.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
@@ -57,12 +64,14 @@
     <Compile Include="SecureFTP\ISecureFTPConnection.cs" />
     <Compile Include="SecureFTP\RenciSecureFTPCommand.cs" />
     <Compile Include="SecureFTP\RenciSecureFTPConnection.cs" />
+    <Compile Include="SecureFTP\RenciSecureFTPTunnelConnection.cs" />
     <Compile Include="SecureFTP\SecureFTPCredential.cs" />
     <Compile Include="SecureFTP\SecureFTPInfo.cs" />
     <Compile Include="SecureShell\ISecureShellCommand.cs" />
     <Compile Include="SecureShell\ISecureShellConnection.cs" />
     <Compile Include="SecureShell\RenciSecureShellCommand.cs" />
     <Compile Include="SecureShell\RenciSecureShellConnection.cs" />
+    <Compile Include="SecureShell\RenciSecureShellTunnelConnection.cs" />
     <Compile Include="SecureShell\SecureShellCredential.cs" />
     <Compile Include="SecureShell\SecureShellInfo.cs" />
     <Compile Include="SharedFolder\ISharedFolderCommand.cs" />
@@ -77,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="supercroods.network.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

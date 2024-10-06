@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperCroods.Skeleton", "Sup
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperCroods.Office", "SuperCroods.Office\SuperCroods.Office.csproj", "{1EE73F6F-ED90-4552-93A8-1A45370F9477}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperCroods.Network.Test", "SuperCroods.Network.Tests\SuperCroods.Network.Test.csproj", "{2B233EAB-A3F6-4E14-B5D7-7C7C4A7479A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1EE73F6F-ED90-4552-93A8-1A45370F9477}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE73F6F-ED90-4552-93A8-1A45370F9477}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EE73F6F-ED90-4552-93A8-1A45370F9477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B233EAB-A3F6-4E14-B5D7-7C7C4A7479A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B233EAB-A3F6-4E14-B5D7-7C7C4A7479A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B233EAB-A3F6-4E14-B5D7-7C7C4A7479A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B233EAB-A3F6-4E14-B5D7-7C7C4A7479A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

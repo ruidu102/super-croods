@@ -6,7 +6,6 @@ namespace SuperCroods.Network.SecureShell
     {
         private SshClient client;
         private string command;
-        private string result;
 
         private RenciSecureShellCommand(SshClient arg)
         {
@@ -20,7 +19,7 @@ namespace SuperCroods.Network.SecureShell
 
         public void Execute()
         {
-            result = client.RunCommand(command).Execute();
+            Result = client.RunCommand(command).Execute();
         }
 
         public ISecureShellCommand CommandText(string arg)
@@ -29,9 +28,6 @@ namespace SuperCroods.Network.SecureShell
             return this;
         }
 
-        public string Result
-        {
-            get { return result; }
-        }
+        public string Result { get; private set; }
     }
 }

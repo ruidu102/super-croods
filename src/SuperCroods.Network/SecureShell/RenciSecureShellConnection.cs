@@ -6,25 +6,14 @@ namespace SuperCroods.Network.SecureShell
 {
     public class RenciSecureShellConnection : ISecureShellConnection
     {
-        private string password;
+        private readonly string password;
         
         private RenciSecureShellConnection(SecureShellInfo arg)
         {
             password = arg.Credential.Password;
-            KeyboardInteractiveAuthenticationMethod kauth =
-                new KeyboardInteractiveAuthenticationMethod(arg.Credential.UserName);
-            PasswordAuthenticationMethod pauth =
-                new PasswordAuthenticationMethod(
-                    arg.Credential.UserName, arg.Credential.Password);
-            kauth.AuthenticationPrompt +=
-                new EventHandler<AuthenticationPromptEventArgs>(HandleKeyEvent);
-            ConnectionInfo connectionInfo =
-                new ConnectionInfo(
-                    arg.Host, arg.Port,
-                    arg.Credential.UserName,
-                    pauth, kauth);
             Path = arg.Path;
-            Client = new SshClient(connectionInfo);
+
+            Client = new SshClient(AuthentiactionMethod(arg));
         }
 
         public static RenciSecureShellConnection CreateConnection(SecureShellInfo arg)
@@ -50,6 +39,25 @@ namespace SuperCroods.Network.SecureShell
                 Client.Disconnect();
                 Client.Dispose();
             }
+        }
+
+        private ConnectionInfo AuthentiactionMethod(SecureShellInfo arg)
+        {
+            KeyboardInteractiveAuthenticationMethod kauth =
+                new KeyboardInteractiveAuthenticationMethod(arg.Credential.UserName);
+            PasswordAuthenticationMethod pauth =
+                new PasswordAuthenticationMethod(
+                    arg.Credential.UserName, arg.Credential.Password);
+            kauth.AuthenticationPrompt +=
+                new EventHandler<AuthenticationPromptEventArgs>(HandleKeyEvent);
+
+            return new ConnectionInfo(
+                arg.Host,
+                arg.Port,
+                arg.Credential.UserName,
+                pauth,
+                kauth
+                );
         }
 
         private void HandleKeyEvent(object sender, AuthenticationPromptEventArgs e)
