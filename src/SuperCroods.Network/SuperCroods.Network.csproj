@@ -35,7 +35,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>supercroods.network.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
@@ -60,6 +61,12 @@
     <Compile Include="Mail\MailClient.cs" />
     <Compile Include="Mail\SmtpInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecureCP\ISecureCPConnection.cs" />
+    <Compile Include="SecureCP\ISecureCPCommand.cs" />
+    <Compile Include="SecureCP\RenciSecureCPConnection.cs" />
+    <Compile Include="SecureCP\RenciSecureCPCommand.cs" />
+    <Compile Include="SecureCP\SecureCPCredential.cs" />
+    <Compile Include="SecureCP\SecureCPInfo.cs" />
     <Compile Include="SecureFTP\ISecureFTPCommand.cs" />
     <Compile Include="SecureFTP\ISecureFTPConnection.cs" />
     <Compile Include="SecureFTP\RenciSecureFTPCommand.cs" />
@@ -86,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="supercroods.network.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
